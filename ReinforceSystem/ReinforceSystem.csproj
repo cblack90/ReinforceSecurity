@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ReinforceController.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Entities\ReinforceContext.cs" />
     <Compile Include="Entities\Staff.cs" />
@@ -60,7 +61,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

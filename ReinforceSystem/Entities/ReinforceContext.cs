@@ -8,7 +8,7 @@ namespace ReinforceSystem.Entities
     public partial class ReinforceContext : DbContext
     {
         public ReinforceContext()
-            : base("name=ReinforceDb")
+            : base("name=DefaultConnection")
         {
         }
 
