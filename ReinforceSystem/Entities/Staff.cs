@@ -6,10 +6,10 @@ namespace ReinforceSystem.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Staff")]
+    //[Table("Staff")]
     public partial class Staff
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StaffId { get; set; }
 
         [Required]

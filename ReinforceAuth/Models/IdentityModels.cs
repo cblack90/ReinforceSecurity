@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -6,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using ReinforceAuth.Admin.Security;
 using ReinforceAuth.Models;
 
 namespace ReinforceAuth.Models
@@ -13,6 +15,7 @@ namespace ReinforceAuth.Models
     // You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public int? StaffID { get; set; }
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -32,6 +35,7 @@ namespace ReinforceAuth.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new SecurityDbContextInitializer());
         }
 
         public static ApplicationDbContext Create()
